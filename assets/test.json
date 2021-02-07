@@ -1,0 +1,253 @@
+[{
+  "id":0,
+  "type": "image",
+  "uri": "https://res.cloudinary.com/gallarycloud/image/upload/v1611422309/fxh9qz1b7xodj2vszg6p.jpg",
+  "rotX":0,
+  "rotY":0,
+  "rotXX":0,
+  "rotXY":0,
+  "rotYX":0,
+  "rotYY":0,
+  "scaleX":0,
+  "scaleY":0,
+  "style":{
+    "height":500,
+    "width":"100%",
+    "position":"absolute",
+    "left":0,
+    "top":0,
+    "transform":[
+      {"translateX":0},
+      {"translateY":0}, 
+      {"rotate": "0deg"}, 
+      {"rotateX":"0deg"}, 
+      {"rotateY":"0deg"},
+      {"scaleX":1},
+      {"scaleY":1}
+      ]
+  }
+}, {
+  "id":2,
+  "type": "image",
+  "uri": "https://res.cloudinary.com/gallarycloud/image/upload/v1611422309/kichath5x8doznu9cosq.png",
+  "rotX":0,
+  "rotY":0,
+  "rotXX":0,
+  "rotXY":0,
+  "rotYX":0,
+  "rotYY":0,
+  "scaleX":0,
+  "scaleY":0,
+  "style":{
+    "height":30,
+    "width":30,
+    "position":"absolute",
+    "left":0,
+    "top":100,
+    "transform":[
+      {"translateX":0}, 
+      {"translateY":0}, 
+      {"rotate": "0deg"}, 
+      {"rotateX":"0deg"}, 
+      {"rotateY":"0deg"},
+      {"scaleX":1},
+      {"scaleY":1}
+      ]
+  }
+},{
+  "id":6,
+  "type":"text",
+  "text":"01207350507",
+  "rotX":0,
+  "rotY":0,
+  "rotXX":0,
+  "rotXY":0,
+  "rotYX":0,
+  "rotYY":0,
+  "scaleX":0,
+  "scaleY":0,
+  "style":{
+    "height":20,
+    "width":90,
+    "position":"absolute" ,
+    "top":105,
+    "left":40,
+    "transform":[
+      {"translateX":0}, 
+      {"translateY":0}, 
+      {"rotate": "0deg"}, 
+      {"rotateX":"0deg"}, 
+      {"rotateY":"0deg"},
+      {"scaleX":1},
+      {"scaleY":1}
+      ]
+  }
+}, {
+  "id":3,
+  "type": "image",
+  "uri": "https://res.cloudinary.com/gallarycloud/image/upload/v1611422309/qp0nocawqskbvcsm4ssv.jpg",
+  "rotX":0,
+  "rotY":0,
+  "rotXX":0,
+  "rotXY":0,
+  "rotYX":0,
+  "rotYY":0,
+  "scaleX":0,
+  "scaleY":0,
+    "style":{
+      "height":30, 
+      "width":30, 
+      "position":"absolute",
+      "left":0,
+      "top":200,
+      "transform":[
+        {"translateX":0}, 
+        {"translateY":0}, 
+        {"rotate": "0deg"}, 
+        {"rotateX":"0deg"}, 
+        {"rotateY":"0deg"},
+        {"scaleX":1},
+        {"scaleY":1}
+        ]
+    }
+},{
+  "id":7,
+  "type":"text",
+  "text":"tameradel209@icloud.com",
+  "rotX":0,
+  "rotY":0,
+  "rotXX":0,
+  "rotXY":0,
+  "rotYX":0,
+  "rotYY":0,
+  "scaleX":0,
+  "scaleY":0,
+  "style":{
+    "height":20,
+    "width":175,
+    "position":"absolute",
+    "top":205,
+    "left":40,
+    "transform":[
+      {"translateX":0}, 
+      {"translateY":0}, 
+      {"rotate": "0deg"}, 
+      {"rotateX":"0deg"}, 
+      {"rotateY":"0deg"},
+      {"scaleX":1},
+      {"scaleY":1}
+      ]
+  }
+}, {
+  "id":4,
+  "type": "image",
+  "uri": "https://res.cloudinary.com/gallarycloud/image/upload/v1611422309/sbzrw2gcbgyefjcrk8lq.png",
+  "rotX":0,
+  "rotY":0,
+  "rotXX":0,
+  "rotXY":0,
+  "rotYX":0,
+  "rotYY":0,
+  "scaleX":0,
+  "scaleY":0,
+  "style":{
+    "height":30, 
+    "width":30, 
+    "position":"absolute",
+    "left":0,
+    "top":300,
+    "transform":[
+      {"translateX":0}, 
+      {"translateY":0}, 
+      {"rotate": "0deg"}, 
+      {"rotateX":"0deg"}, 
+      {"rotateY":"0deg"},
+      {"scaleX":1},
+      {"scaleY":1}
+      ]
+  }
+},{
+  "id":8,
+  "type":"text",
+  "text":"alexandria",
+  "rotX":0,
+  "rotY":0,
+  "rotXX":0,
+  "rotXY":0,
+  "rotYX":0,
+  "rotYY":0,
+  "scaleX":0,
+  "scaleY":0,
+  "style":{
+    "height":20,
+    "width":65,
+    "position":"absolute",
+    "top":305,
+    "left":40,
+    "transform":[
+      {"translateX":0}, 
+      {"translateY":0}, 
+      {"rotate": "0deg"}, 
+      {"rotateX":"0deg"}, 
+      {"rotateY":"0deg"},
+      {"scaleX":1},
+      {"scaleY":1}
+      ]
+  }
+}, {
+  "id":5,
+  "type": "image",
+  "uri": "https://res.cloudinary.com/gallarycloud/image/upload/v1611422310/qf5mcekcbkl0hcacm2tb.jpg",
+  "rotX":0,
+  "rotY":0,
+  "rotXX":0,
+  "rotXY":0,
+  "rotYX":0,
+  "rotYY":0,
+  "scaleX":0,
+  "scaleY":0,
+  "style":{
+    "height":30, 
+    "width":30, 
+    "position":"absolute",
+    "left":0,
+    "top":400,
+    "transform":[
+      {"translateX":0}, 
+      {"translateY":0}, 
+      {"rotate": "0deg"}, 
+      {"rotateX":"0deg"}, 
+      {"rotateY":"0deg"},
+      {"scaleX":1},
+      {"scaleY":1}
+      ]
+  }
+},{
+  "id":9,
+  "type":"text",
+  "text":"http://tameradel.com",
+  "rotX":0,
+  "rotY":0,
+  "rotXX":0,
+  "rotXY":0,
+  "rotYX":0,
+  "rotYY":0,
+  "scaleX":0,
+  "scaleY":0,
+  "style":{
+    "height":20,
+    "width":135,
+    "position":"absolute",
+    "top":405,
+    "left":40,
+    "transform":[
+      {"translateX":0}, 
+      {"translateY":0}, 
+      {"rotate": "0deg"}, 
+      {"rotateX":"0deg"}, 
+      {"rotateY":"0deg"},
+      {"scaleX":1},
+      {"scaleY":1}
+      ]
+  }
+}]
