@@ -14,7 +14,7 @@ import {useSelector} from 'react-redux'
 import Language from './src/redux/reducers/language';
 import * as Localization from 'expo-localization'
 import i18n from 'i18n-js'
-import {NavigationContainer} from '@react-navigation/native'
+import {NavigationContainer, DefaultTheme, DarkTheme} from '@react-navigation/native'
 import BottomTabs from './src/navigation/bottom'
 
 export const LocalizationContext = createContext()
@@ -26,6 +26,23 @@ const langObjects = {
     'en': en,
     'ar': ar
 }
+
+const CustomDefaultTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    customBackground: 'rgb(255, 255, 255)',
+    componentBackground: 'rgb(255, 248, 250)',
+    componentText: 'rgb(196, 54, 98)',
+    nameText:'rgb(49, 20, 30)',
+    icon:'rgb(192, 53, 96)',
+    componentBorder: 'rgb(255, 0, 127)',
+    bottomBorder:'rgb(221, 221, 221)',
+    headerText:'rgb(87, 44, 58)',
+    backageIcon:'rgb(239, 60, 115)',
+    gray:'rgb(151, 151, 151)'
+  },
+};
 
 const App = () => {
 
@@ -61,7 +78,7 @@ const App = () => {
     <LocalizationContext.Provider value={localizationContext}>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor} >
-        <NavigationContainer>
+        <NavigationContainer theme={CustomDefaultTheme}>
           <BottomTabs />
         </NavigationContainer>
       </PersistGate>
