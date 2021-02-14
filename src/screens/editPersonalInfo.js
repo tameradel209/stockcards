@@ -5,7 +5,6 @@ import {LocalizationContext} from '../../App'
 import {useTheme} from '@react-navigation/native'
 import * as ImagePicker from 'expo-image-picker'
 import CustomButton from "../components/button";
-import {Picker} from '@react-native-picker/picker'
 import Codes from '../../assets/countryCode.json'
 
 const {width, height} = Dimensions.get('window')

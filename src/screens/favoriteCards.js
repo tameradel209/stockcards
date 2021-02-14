@@ -3,6 +3,7 @@ import {View, Text, Dimensions, TouchableOpacity, ScrollView, Image, StyleSheet,
 import {MaterialCommunityIcons} from 'react-native-vector-icons'
 import {LocalizationContext} from '../../App'
 import {useTheme} from '@react-navigation/native'
+import * as Animatable from 'react-native-animatable'
 
 const {width, height} = Dimensions.get('window')
 
@@ -10,10 +11,10 @@ const Card = (props) =>{
 
     const {t, locale, setLocale} = useContext(LocalizationContext)
     const {colors} = useTheme()
-    const uri='file:/data/user/0/host.exp.exponent/cache/ExperienceData/%2540tamer209%252Fstockcards/ImagePicker/1d5d2e76-2d38-4035-ab29-c77c3c4e7e67.jpg'
+    const uri='https://res.cloudinary.com/gallarycloud/image/upload/v1611422309/fxh9qz1b7xodj2vszg6p.jpg'
 
     return(
-        <View style={{margin:5, alignItems:locale=='en'? 'flex-start': 'flex-end'}}>
+        <Animatable.View animation='flipInY' delay={200} style={{margin:5, alignItems:locale=='en'? 'flex-start': 'flex-end'}}>
             <View>
                 <Image source={{uri}} style={[{height:width/2-10, width:width/2-10, }, locale=='en'? {borderBottomRightRadius:25}: {borderBottomLeftRadius:25}]}/>
             </View>
@@ -27,7 +28,7 @@ const Card = (props) =>{
             <View style={[{width:30, height:30, borderRadius:15, alignItems:'center', justifyContent:'center', backgroundColor:'white', position:'absolute', top:5}, locale=='en'? {left:5} : {right:5}]}>
                 <MaterialCommunityIcons name='cards-heart' size={20} color={colors.icon} />
             </View>
-        </View>
+        </Animatable.View>
     )
 }
 

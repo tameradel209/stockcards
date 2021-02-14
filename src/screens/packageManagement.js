@@ -4,8 +4,10 @@ import {LocalizationContext} from '../../App'
 import {useTheme, useFocusEffect} from '@react-navigation/native'
 import {Feather, MaterialCommunityIcons} from 'react-native-vector-icons'
 import CustomButton from "../components/button";
-import { t } from 'i18n-js'
+import * as Animatable from 'react-native-animatable'
+
 const {height, width} = Dimensions.get('window')
+
 
 const Row = (props) =>{
 
@@ -46,12 +48,29 @@ const PackageManagement = (props) =>{
     const [button, setButton] = useState(0)
     const {colors} = useTheme()
     const {t, locale, setLocale} = useContext(LocalizationContext)
+    const handleViewRef = ref => this.view = ref
+
+    const rubber = () => this.view.rubberBand(1000)
+    const fade = () => this.view.fadeInDown(1000)
+
+    const onPress =(value) =>{
+        if(value == button){
+            rubber()
+        }
+        else{
+            setButton(value)
+            fade()
+        }
+    }
 
     return(
         <View style={{backgroundColor:'white'}}>
             <ScrollView>
-                <Text style={{margin:10, fontWeight:'bold', color:colors.nameText}}>you are naow use masia package for companies</Text>
-                <Text style={{marginHorizontal:10}}>package package package package package package package package package package package package package package package package package </Text>
+                <View style={{alignItems:locale=='en'?'flex-start':'flex-end'}}>
+                    <Text style={{margin:10, fontWeight:'bold', color:colors.nameText}}>{t('you are now using {}', {package:'masia package for companies'})}</Text>
+                    <Text style={{marginHorizontal:10}}>package package package package package package package package package package package package package package package package package </Text>
+                </View>
+
                 <View style={{margin:10, paddingVertical:10, backgroundColor:'#f8f8f8'}}>
                     <Text style={{fontWeight:'bold', color:colors.icon, margin:10}}>{t('package details')}</Text>
                     <Row color={'white'} title={t('total package cards')} value={'5 cards'}/>
@@ -64,22 +83,24 @@ const PackageManagement = (props) =>{
 
                 <View>
                     <View style={{backgroundColor:'#fff5f8', margin:10}}>
-                        <Text style={{margin:10, fontWeight:'bold', color:'#c43662'}}>{t('getting codes for council directors')}</Text>
-                        <Text style={{margin:10, color:'#85314b'}}>{t('you have {} gift codes which can be used {} times for each', {giftCodes:50, useTimes:25})}</Text>
-                        <View style={{flexDirection:'row'}}>
-                            <CustomButton style={{backgroundColor:button==0?'#ef3c73':null, borderColor:'#c43662', width:width/7*3, height:height/17, margin:10}} titleStyle={{color:button==0?'white':'#c43662'}} title={t('used codes list')} onPress={() =>setButton(0)} />
-                            <CustomButton style={{backgroundColor:button==1?'#ef3c73':null, borderColor:'#c43662', width:width/7*3, height:height/17, margin:10}} titleStyle={{color:button==1?'white':'#c43662'}} title={t('create a new code')} onPress={() =>setButton(1)} />
+                        <View style={{alignItems:locale=='en'?'flex-start':'flex-end'}}>
+                            <Text style={{margin:10, fontWeight:'bold', color:'#c43662'}}>{t('getting codes for council directors')}</Text>
+                            <Text style={{margin:10, color:'#85314b'}}>{t('you have {} gift codes which can be used {} times for each', {giftCodes:50, useTimes:25})}</Text>
+                        </View>
+                        <View style={{flexDirection:locale=='en'?'row':'row-reverse'}}>
+                            <CustomButton style={{backgroundColor:button==0?'#ef3c73':null, borderColor:'#c43662', width:width/7*3, height:height/17, margin:10}} titleStyle={{color:button==0?'white':'#c43662'}} title={t('used codes list')} onPress={() =>onPress(0)} />
+                            <CustomButton style={{backgroundColor:button==1?'#ef3c73':null, borderColor:'#c43662', width:width/7*3, height:height/17, margin:10}} titleStyle={{color:button==1?'white':'#c43662'}} title={t('create a new code')} onPress={() =>onPress(1)} />
                         </View>
                         {button == 0 ?
-                        <View>
-                            <View style={{backgroundColor:'#d4edda',marginHorizontal:20, padding:10}}>
+                        <Animatable.View animation='fadeInDown' ref={handleViewRef}>
+                            <View style={{alignItems:locale=='en'?'flex-start':'flex-end', backgroundColor:'#d4edda',marginHorizontal:20, padding:10}}>
                                 <Text style={{color:'#0e4e1c'}}>{t('phrase1',{usedCodes:5, totalCodes:25, remainCodes:10})}</Text>
                             </View>
                             <CodeCard />
                             <CodeCard />
-                        </View>
+                        </Animatable.View>
                         :button == 1 ?
-                        <View style={{flexDirection:locale=='en'?'row':'row-reverse', alignItems:'center'}}>
+                        <Animatable.View animation='fadeInDown' ref={handleViewRef} style={{flexDirection:locale=='en'?'row':'row-reverse', alignItems:'center'}}>
                             <TouchableOpacity style={{flex:1, alignItems:'center'}}>
                                 <MaterialCommunityIcons name='content-copy' size={30} style={{backgroundColor:'#fbe8ee'}} />
                             </TouchableOpacity>
@@ -89,7 +110,7 @@ const PackageManagement = (props) =>{
                             <View style={{backgroundColor:'#fbe8ee', padding:10, margin:10, flex:4, alignItems:'center', justifyContent:'center'}}>
                                 <Text style={{fontSize:20, fontWeight:'bold', color:'#85314b'}}>JH54KU</Text>
                             </View>
-                        </View>
+                        </Animatable.View>
                         :
                         null
                         }
@@ -99,22 +120,24 @@ const PackageManagement = (props) =>{
 
                 <View>
                     <View style={{backgroundColor:'#f5f6ff', margin:10}}>
-                        <Text style={{margin:10, fontWeight:'bold', color:'#464c82'}}>{t('getting codes for department managers and supervisors')}</Text>
-                        <Text style={{margin:10, color:'#21275b'}}>{t('you have {} gift codes which can be used {} times for each', {giftCodes:50, useTimes:25})}</Text>
-                        <View style={{flexDirection:'row'}}>
-                            <CustomButton style={{backgroundColor:button==2?'#367dc4':null, borderColor:'#464c82', width:width/7*3, height:height/17, margin:10}} titleStyle={{color:button==2?'white':'#464c82'}} title={t('used codes list')} onPress={() =>setButton(2)} />
-                            <CustomButton style={{backgroundColor:button==3?'#367dc4':null, borderColor:'#464c82', width:width/7*3, height:height/17, margin:10}} titleStyle={{color:button==3?'white':'#464c82'}} title={t('create a new code')} onPress={() =>setButton(3)} />
+                        <View style={{alignItems:locale=='en'?'flex-start':'flex-end'}}>
+                            <Text style={{margin:10, fontWeight:'bold', color:'#464c82'}}>{t('getting codes for department managers and supervisors')}</Text>
+                            <Text style={{margin:10, color:'#21275b'}}>{t('you have {} gift codes which can be used {} times for each', {giftCodes:50, useTimes:25})}</Text>
+                        </View>
+                        <View style={{flexDirection:locale=='en'?'row':'row-reverse'}}>
+                            <CustomButton style={{backgroundColor:button==2?'#367dc4':null, borderColor:'#464c82', width:width/7*3, height:height/17, margin:10}} titleStyle={{color:button==2?'white':'#464c82'}} title={t('used codes list')} onPress={() =>onPress(2)} />
+                            <CustomButton style={{backgroundColor:button==3?'#367dc4':null, borderColor:'#464c82', width:width/7*3, height:height/17, margin:10}} titleStyle={{color:button==3?'white':'#464c82'}} title={t('create a new code')} onPress={() =>onPress(3)} />
                         </View>
                         {button == 2 ?
-                        <View>
-                            <View style={{backgroundColor:'#d4edda',marginHorizontal:20, padding:10}}>
+                        <Animatable.View animation='fadeInDown' ref={handleViewRef}>
+                            <View style={{alignItems:locale=='en'?'flex-start':'flex-end', backgroundColor:'#d4edda',marginHorizontal:20, padding:10}}>
                                 <Text style={{color:'#0e4e1c'}}>{t('phrase1',{usedCodes:5, totalCodes:25, remainCodes:10})}</Text>
                             </View>
                             <CodeCard />
                             <CodeCard />
-                        </View>
+                        </Animatable.View>
                         :button == 3 ?
-                        <View style={{flexDirection:locale=='en'?'row':'row-reverse', alignItems:'center'}}>
+                        <Animatable.View animation='fadeInDown' ref={handleViewRef} style={{flexDirection:locale=='en'?'row':'row-reverse', alignItems:'center'}}>
                             <TouchableOpacity style={{flex:1, alignItems:'center'}}>
                                 <MaterialCommunityIcons name='content-copy' size={30} style={{backgroundColor:'#e8ecfb'}} />
                             </TouchableOpacity>
@@ -124,7 +147,7 @@ const PackageManagement = (props) =>{
                             <View style={{backgroundColor:'#e8ecfb', padding:10, margin:10, flex:4, alignItems:'center', justifyContent:'center'}}>
                                 <Text style={{fontSize:20, fontWeight:'bold', color:'#21275b'}}>JH54KU</Text>
                             </View>
-                        </View>
+                        </Animatable.View>
                         :null
                         }
                     </View>
@@ -133,22 +156,24 @@ const PackageManagement = (props) =>{
 
                 <View>
                     <View style={{backgroundColor:'#fffceb', margin:10}}>
-                        <Text style={{margin:10, fontWeight:'bold', color:'#bc8a00'}}>{t('getting codes for employees')}</Text>
-                        <Text style={{margin:10, color:'#6e5717'}}>{t('you have {} gift codes which can be used {} times for each', {giftCodes:50, useTimes:25})}</Text>
-                        <View style={{flexDirection:'row'}}>
-                            <CustomButton style={{backgroundColor:button==4?'#bc8a00':null, borderColor:'#bc8a00', width:width/7*3, height:height/17, margin:10}} titleStyle={{color:button==4?'white':'#bc8a00'}} title={t('used codes list')} onPress={() =>setButton(4)} />
-                            <CustomButton style={{backgroundColor:button==5?'#bc8a00':null, borderColor:'#bc8a00', width:width/7*3, height:height/17, margin:10}} titleStyle={{color:button==5?'white':'#bc8a00'}} title={t('create a new code')} onPress={() =>setButton(5)} />
+                        <View style={{alignItems:locale=='en'?'flex-start':'flex-end'}}>
+                            <Text style={{margin:10, fontWeight:'bold', color:'#bc8a00'}}>{t('getting codes for employees')}</Text>
+                            <Text style={{margin:10, color:'#6e5717'}}>{t('you have {} gift codes which can be used {} times for each', {giftCodes:50, useTimes:25})}</Text>
+                        </View>
+                        <View style={{flexDirection:locale=='en'?'row':'row-reverse'}}>
+                            <CustomButton style={{backgroundColor:button==4?'#bc8a00':null, borderColor:'#bc8a00', width:width/7*3, height:height/17, margin:10}} titleStyle={{color:button==4?'white':'#bc8a00'}} title={t('used codes list')} onPress={() =>onPress(4)} />
+                            <CustomButton style={{backgroundColor:button==5?'#bc8a00':null, borderColor:'#bc8a00', width:width/7*3, height:height/17, margin:10}} titleStyle={{color:button==5?'white':'#bc8a00'}} title={t('create a new code')} onPress={() =>onPress(5)} />
                         </View>
                         {button == 4 ?
-                        <View>
-                            <View style={{backgroundColor:'#d4edda',marginHorizontal:20, padding:10}}>
+                        <Animatable.View animation='fadeInDown' ref={handleViewRef}>
+                            <View style={{alignItems:locale=='en'?'flex-start':'flex-end', backgroundColor:'#d4edda',marginHorizontal:20, padding:10}}>
                                 <Text style={{color:'#0e4e1c'}}>{t('phrase1',{usedCodes:5, totalCodes:25, remainCodes:10})}</Text>
                             </View>
                             <CodeCard />
                             <CodeCard />
-                        </View>
+                        </Animatable.View>
                         :button == 5 ?
-                        <View style={{flexDirection:locale=='en'?'row':'row-reverse', alignItems:'center'}}>
+                        <Animatable.View animation='fadeInDown' ref={handleViewRef} style={{flexDirection:locale=='en'?'row':'row-reverse', alignItems:'center'}}>
                             <TouchableOpacity style={{flex:1, alignItems:'center'}}>
                                 <MaterialCommunityIcons name='content-copy' size={30} style={{backgroundColor:'#fbf5e8'}} />
                             </TouchableOpacity>
@@ -158,7 +183,7 @@ const PackageManagement = (props) =>{
                             <View style={{backgroundColor:'#fbf5e8', padding:10, margin:10, flex:4, alignItems:'center', justifyContent:'center'}}>
                                 <Text style={{fontSize:20, fontWeight:'bold', color:'#6e5717'}}>JH54KU</Text>
                             </View>
-                        </View>
+                        </Animatable.View>
                         :null
                         }
                     </View>

@@ -11,7 +11,7 @@
     "hello":"hello..",
     "personal information":"personal information",
     "my packages":"my packages",
-    "orders list":"orders list",
+    "my orders list":"orders list",
     "notifications":"notifications",
     "edit personal information":"edit personal information",
     "save edits":"save edits",
@@ -21,10 +21,12 @@
     "all":"all",
     "available":"available",
     "expired":"expired",
+    "card status":"card status",
     "remain cards":"remain cards",
     "purchase date":"puchase date",
     "package status":"package status",
     "package price":"package price",
+    "price":"price",
     "package management":"management management",
     "package details":"package details",
     "total package cards":"total package cards",
@@ -40,5 +42,10 @@
     "last use of code":"last use of code",
     "phrase1":"{{usedCodes}} codes of councile directors has been used of {{totalCodes}} codes .. {{remainCodes}} codes remain to use",
     "getting codes for department managers and supervisors":"getting codes for department managers and supervisors",
-    "getting codes for employees":"getting codes for employees"
+    "getting codes for employees":"getting codes for employees",
+    "you are now using {}":"you are now using {{package}}",
+    "download card":"download card",
+    "occasion notifications management":"occasion notifications management",
+    "occasion date":"occasion date",
+    "notification times":"notification times"
 }

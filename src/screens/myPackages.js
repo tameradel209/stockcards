@@ -3,6 +3,7 @@ import {View, Text, Dimensions, TouchableOpacity, Animated, ScrollView, Image, S
 import {LocalizationContext} from '../../App'
 import {useTheme, useFocusEffect} from '@react-navigation/native'
 import {Feather, MaterialCommunityIcons} from 'react-native-vector-icons'
+import * as Animatable from 'react-native-animatable'
 
 const {width, height} = Dimensions.get('window')
 
@@ -13,7 +14,7 @@ const Package = (props) =>{
     const {colors} = useTheme()
 
     return(
-        <View style={{height:height/4, backgroundColor:'white', margin:10}}>
+        <Animatable.View animation={'lightSpeedIn'} delay={500} style={{height:height/4, backgroundColor:'white', margin:10}}>
             <View style={{flex:1}}>
                 <View style={{flex:1, flexDirection:locale=='en'?'row':'row-reverse', alignItems:'center', borderBottomWidth:1, margin:5, paddingVertical:5, borderBottomColor:colors.bottomBorder}}>
                     <View style={{alignItems:locale=='en'?'flex-start':'flex-end', flex:4}}>
@@ -62,7 +63,7 @@ const Package = (props) =>{
                     </View>
                 </View>
             </View>
-        </View>
+        </Animatable.View>
     )
 }
 
@@ -124,7 +125,7 @@ const MyPackages = (props) =>{
             <FlatList 
                 data={data}
                 renderItem={({item, index}) => <Package key={index} navigation={props.navigation} />}
-                keyExtractor={({item}) => item}
+                keyExtractor={(item) => item}
             />
         </View>
     )

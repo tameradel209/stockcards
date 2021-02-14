@@ -1,10 +1,11 @@
-import React, {useContext} from 'react'
+import React, {useContext, useCallback} from 'react'
 import {View, Text, Dimensions, TouchableOpacity, ScrollView, Image, StyleSheet} from 'react-native'
 import {MaterialCommunityIcons} from 'react-native-vector-icons'
 import { LinearGradient } from 'expo-linear-gradient'
 import * as Device from 'expo-device'
 import {LocalizationContext} from '../../App'
-import { useTheme } from '@react-navigation/native'
+import { useTheme, useFocusEffect } from '@react-navigation/native'
+import * as Animatable from 'react-native-animatable'
 
 const {width, height} = Dimensions.get('window')
 
@@ -34,14 +35,17 @@ const Item = (props) => {
     const {t, locale, setLocale} = useContext(LocalizationContext)
 
     return(
-        <TouchableOpacity onPress={props.onPress} style={[styles.button, {backgroundColor:colors.customBackground, flexDirection:locale=='en'? 'row':'row-reverse'}]}>
-            <View style={{margin:20}}>
-                {props.icon}
-            </View>
-            <View>
-                <Text style={{color:colors.nameText, fontSize:16}}>{props.name}</Text>
-            </View>
-        </TouchableOpacity>
+        <View>
+            <TouchableOpacity onPress={props.onPress} style={[styles.button, {backgroundColor:colors.customBackground, flexDirection:locale=='en'? 'row':'row-reverse'}]}>
+                <View style={{margin:20}}>
+                    {props.icon}
+                </View>
+                <View>
+                    <Text style={{color:colors.nameText, fontSize:16}}>{props.name}</Text>
+                </View>
+            </TouchableOpacity>
+        </View>
+
     )
 }
 
@@ -49,18 +53,29 @@ const MainProfile = (props) => {
 
     const {t, locale, setLocale} = useContext(LocalizationContext)
 
+/*     const handleViewRef = ref => this.view = ref
+
+    const zoom = () => this.view.zoomInDown(2000)
+
+    useFocusEffect(useCallback(
+        () => {
+            zoom() 
+        },
+        [],
+    )) */
+
     return(
         <View style={styles.container}>
             <View style={styles.headerContainer}>
                 <Header name={'Ahmed Adel'} />
             </View>
-            <View style={styles.bodyContainer}>
+            <Animatable.View animation={'zoomInDown'} /* ref={handleViewRef} */ style={styles.bodyContainer}>
                 <Item icon={<Image source={require('../../assets/chat-bubble-user.png')} style={{width:24, height:24}} />} name={t('personal information')} onPress={() => props.navigation.navigate('personalInfo')}/>
                 <Item icon={<Image source={require('../../assets/image-plus.png')} style={{width:24, height:24}} />} name={t('my favorite cards')} onPress={() => props.navigation.navigate('favoriteCards')}/>
                 <Item icon={<Image source={require('../../assets/package.png')} style={{width:24, height:24}} />} name={t('my packages')} onPress={() => props.navigation.navigate('myPackages')}/>
-                <Item icon={<Image source={require('../../assets/clipboard-alt.png')} style={{width:24, height:30}} />} name={t('orders list')}/>
-                <Item icon={<Image source={require('../../assets/bell.png')} style={{width:24, height:30}} />} name={t('notifications')}/>                  
-            </View>
+                <Item icon={<Image source={require('../../assets/clipboard-alt.png')} style={{width:24, height:30}} />} name={t('my orders list')} onPress={() => props.navigation.navigate('ordersList')}/>
+                <Item icon={<Image source={require('../../assets/bell.png')} style={{width:24, height:30}} />} name={t('notifications')}  onPress={() => props.navigation.navigate('notifications')}/>                  
+            </Animatable.View>
         </View>
     )
 }

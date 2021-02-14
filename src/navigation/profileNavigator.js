@@ -5,6 +5,8 @@ import PersonalInfo from '../screens/personalInfo'
 import EditPersonalInfo from '../screens/editPersonalInfo'
 import FavoriteCards from '../screens/favoriteCards'
 import MyPackages from '../screens/myPackages'
+import OrdersList from '../screens/ordersList'
+import Notifications from '../screens/notificationsManagement'
 import {LocalizationContext} from '../../App'
 import {useTheme} from '@react-navigation/native'
 import {Ionicons} from 'react-native-vector-icons'
@@ -44,6 +46,14 @@ const ProfileNavigator = () =>{
             }} />
             <Stack.Screen name='packageManagement' component={PackageManagement} options={{
                 headerTitle:t('package management'),
+                headerTitleAlign:'center',
+            }} />
+            <Stack.Screen name='ordersList' component={OrdersList} options={{
+                headerTitle:t('my orders list'),
+                headerTitleAlign:'center',
+            }} />
+            <Stack.Screen name='notifications' component={Notifications} options={{
+                headerTitle:t('occasion notifications management'),
                 headerTitleAlign:'center',
             }} />
         </Stack.Navigator>

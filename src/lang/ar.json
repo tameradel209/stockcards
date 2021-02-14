@@ -11,7 +11,7 @@
     "hello":"مرحبا..",
     "personal information":"البيانات الشخصيه",
     "my packages":"باقاتى",
-    "orders list":"قائمة طلباتى",
+    "my orders list":"قائمة طلباتى",
     "notifications":"ادارة تنبيهاتى",
     "edit personal information":"تعديل البيانات الشخصية",
     "save edits":"حفظ التعديلات",
@@ -21,10 +21,12 @@
     "all":"الكل",
     "available":"المتاحه",
     "expired":"منتهية",
+    "card status":"حاله الكارت",
     "remain cards":"الكروت التبقيه",
     "purchase date":"تاريخ الشراء",
     "package status":"حالة الباقة",
     "package price":"سعر الباقة",
+    "price":"السعر",
     "package management":"ادارة الباقة",
     "package details":"تفاصيل الباقة",
     "total package cards":"اجمالى كروت الباقة",
@@ -40,5 +42,10 @@
     "last use of code":"اخر استخدام للكود",
     "phrase1":"تم استخدام {{usedCodes}} أكواد أعضاء مجلس الادارة من اجمالى {{totalCodes}} كود .. متبقى للاستخدام {{remainCodes}} اكواد",
     "getting codes for department managers and supervisors":"الحصول على اكواد مدراء الاقسام والمشرفين",
-    "getting codes for employees":"الحصول على اكواد الموظفيين"
+    "getting codes for employees":"الحصول على اكواد الموظفيين",
+    "you are now using {}":"انت الان تستخدم {{package}}",
+    "download card":"تحميل الكارت",
+    "occasion notifications management":"ادارة تنبيهات المناسبات",
+    "occasion date":"تاريخ المناسبه",
+    "notification times":"اوقات التنبيه"
 }

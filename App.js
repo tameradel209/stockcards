@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef, createContext, useContext } from 'react';
-import { Animated, View, StyleSheet, PanResponder, Text, TouchableWithoutFeedback, Image, Button } from "react-native";
+import { Animated, View, StyleSheet, PanResponder, Text, TouchableWithoutFeedback, Image, Button, StatusBar } from "react-native";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import db from './assets/test.json'
 import {PersistGate} from 'redux-persist/es/integration/react'
@@ -78,6 +78,14 @@ const App = () => {
     <LocalizationContext.Provider value={localizationContext}>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor} >
+      <StatusBar
+        StatusBarStyle={{height:100}}
+        animated={true}
+        backgroundColor="#3f294e"
+        barStyle={'light-content'}
+        showHideTransition={'fade'}
+        hidden={false}
+        networkActivityIndicatorVisible={true} />
         <NavigationContainer theme={CustomDefaultTheme}>
           <BottomTabs />
         </NavigationContainer>
