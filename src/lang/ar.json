@@ -24,5 +24,21 @@
     "remain cards":"الكروت التبقيه",
     "purchase date":"تاريخ الشراء",
     "package status":"حالة الباقة",
-    "package price":"سعر الباقة"
+    "package price":"سعر الباقة",
+    "package management":"ادارة الباقة",
+    "package details":"تفاصيل الباقة",
+    "total package cards":"اجمالى كروت الباقة",
+    "used cards":"الكروت المستخدمة",
+    "used codes list":"قائمة الأكواد المستخدمة",
+    "create a new code":"استخراج كود جديد",
+    "getting codes for council directors":"الحصول على أكواد لأعضاء مجلس الادارة",
+    "you have {} gift codes which can be used {} times for each":"لديك {{giftCodes}} كود اهداء يمكنك استخدام كل كود {{useTimes}} مره فقط",
+    "code":"الكود",
+    "creation code date":"تاريخ انشاء الكود",
+    "number of use time":"عدد مرات الاستخدام",
+    "remain to use":"المتبقى للاستخدام",
+    "last use of code":"اخر استخدام للكود",
+    "phrase1":"تم استخدام {{usedCodes}} أكواد أعضاء مجلس الادارة من اجمالى {{totalCodes}} كود .. متبقى للاستخدام {{remainCodes}} اكواد",
+    "getting codes for department managers and supervisors":"الحصول على اكواد مدراء الاقسام والمشرفين",
+    "getting codes for employees":"الحصول على اكواد الموظفيين"
 }

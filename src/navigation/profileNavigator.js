@@ -8,6 +8,7 @@ import MyPackages from '../screens/myPackages'
 import {LocalizationContext} from '../../App'
 import {useTheme} from '@react-navigation/native'
 import {Ionicons} from 'react-native-vector-icons'
+import PackageManagement from "../screens/packageManagement";
 
 const Stack = createStackNavigator()
 
@@ -39,6 +40,10 @@ const ProfileNavigator = () =>{
             }} />
             <Stack.Screen name='myPackages' component={MyPackages} options={{
                 headerTitle:t('my packages'),
+                headerTitleAlign:'center',
+            }} />
+            <Stack.Screen name='packageManagement' component={PackageManagement} options={{
+                headerTitle:t('package management'),
                 headerTitleAlign:'center',
             }} />
         </Stack.Navigator>

@@ -5,7 +5,8 @@ import {LocalizationContext} from '../../App'
 import {useTheme} from '@react-navigation/native'
 import * as ImagePicker from 'expo-image-picker'
 import CustomButton from "../components/button";
-
+import {Picker} from '@react-native-picker/picker'
+import Codes from '../../assets/countryCode.json'
 
 const {width, height} = Dimensions.get('window')
 
@@ -96,11 +97,11 @@ const EditPersonalInfo = (props) =>{
                 <View style={[styles.imageContainer, { alignItems:locale=='en'?'flex-start':'flex-end'}]}>
                     <Text style={[styles.imageText, {color:colors.componentText}]}>{t('image')}</Text>
                     <TouchableOpacity onPress={() => setModalVisible(true)}>
-                    <Image source={{uri:image}} style={styles.image} />
+                    <Image source={require('../../assets/group.png')} style={styles.image} />
                     </TouchableOpacity>
                 </View>
                 <View style={styles.buttonContainer}>
-                    <CustomButton title={t('save edits')} />
+                    <CustomButton style={{backgroundColor:colors.backageIcon}} titleStyle={{color:'white'}} title={t('save edits')} />
                 </View>
             </View>
             <Modal

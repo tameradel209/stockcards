@@ -24,5 +24,21 @@
     "remain cards":"remain cards",
     "purchase date":"puchase date",
     "package status":"package status",
-    "package price":"package price"
+    "package price":"package price",
+    "package management":"management management",
+    "package details":"package details",
+    "total package cards":"total package cards",
+    "used cards":"used cards",
+    "used codes list":"used cards list",
+    "create a new code":"create a new code",
+    "getting codes for council directors":"getting codes for council directors",
+    "you have {} gift codes which can be used {} times for each":"you have {{giftCodes}} gift codes which can be used {{useTimes}} times for each",
+    "code":"code",
+    "creation code date":"creation code date",
+    "number of use time":"number of use time",
+    "remain to use":"remain to use",
+    "last use of code":"last use of code",
+    "phrase1":"{{usedCodes}} codes of councile directors has been used of {{totalCodes}} codes .. {{remainCodes}} codes remain to use",
+    "getting codes for department managers and supervisors":"getting codes for department managers and supervisors",
+    "getting codes for employees":"getting codes for employees"
 }
