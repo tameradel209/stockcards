@@ -7,7 +7,7 @@ import FavoriteCards from '../screens/favoriteCards'
 import MyPackages from '../screens/myPackages'
 import OrdersList from '../screens/ordersList'
 import Notifications from '../screens/notificationsManagement'
-import {LocalizationContext} from '../../App'
+import {LocalizationContext} from '../context/langContext'
 import {useTheme} from '@react-navigation/native'
 import {Ionicons} from 'react-native-vector-icons'
 import PackageManagement from "../screens/packageManagement";

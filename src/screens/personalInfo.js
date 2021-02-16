@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import {View, Text, Dimensions, TouchableOpacity, ScrollView, Image, StyleSheet} from 'react-native'
 import {MaterialCommunityIcons} from 'react-native-vector-icons'
-import {LocalizationContext} from '../../App'
+import {LocalizationContext} from '../context/langContext'
 import {useTheme} from '@react-navigation/native'
 
 const {width, height} = Dimensions.get('window')

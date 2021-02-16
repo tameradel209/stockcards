@@ -1,6 +1,6 @@
 import React, {useContext, useRef, useState, useEffect, useCallback} from 'react'
 import {View, Text, Dimensions, TouchableOpacity, Animated, ScrollView, Image, StyleSheet, FlatList} from 'react-native'
-import {LocalizationContext} from '../../App'
+import {LocalizationContext} from '../context/langContext'
 import {useTheme, useFocusEffect} from '@react-navigation/native'
 import {Feather, MaterialCommunityIcons} from 'react-native-vector-icons'
 import CustomButton from "../components/button";

@@ -47,5 +47,25 @@
     "download card":"download card",
     "occasion notifications management":"occasion notifications management",
     "occasion date":"occasion date",
-    "notification times":"notification times"
+    "notification times":"notification times",
+    "login":"login",
+    "create a new account":"create a new account",
+    "continue without login":"continue without login",
+    "login and enjoy the best groups of free and paid gift cards":"login and enjoy the best groups of free and paid gift cards",
+    "enter email":"enter email",
+    "enter password":"enter password",
+    "password":"password",
+    "forgot password ?":"forgot password ?",
+    "or login with":"or login with",
+    "get actual account in the app":"get actual account in the app",
+    "create an account":"create an account",
+    "create a new account and enjoy the best groups of free and paid gift cards":"create a new account and enjoy the best groups of free and paid gift cards",
+    "rewrite password":"rewrite password",
+    "enter full name":"enter full name",
+    "enter phone number":"enter phone number",
+    "password reset":"password reset",
+    "you can reset your password if you are facing a problem while login":"you can reset your password if you are facing a problem while login",
+    "enter your email to reset your password":"enter your email to reset your password",
+    "phrase2":"you will recieve a message that contains your activation code. if you are facing a problrms resetting your password. call us or send an email"
+
 }

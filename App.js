@@ -15,9 +15,8 @@ import Language from './src/redux/reducers/language';
 import * as Localization from 'expo-localization'
 import i18n from 'i18n-js'
 import {NavigationContainer, DefaultTheme, DarkTheme} from '@react-navigation/native'
-import BottomTabs from './src/navigation/bottom'
-
-export const LocalizationContext = createContext()
+import MainNavigator from './src/navigation/mainNavigator'
+import {LocalizationContext} from './src/context/langContext'
 
 i18n.fallbacks = true;
 i18n.translations = { ar, en };
@@ -46,7 +45,9 @@ const CustomDefaultTheme = {
 
 const App = () => {
 
-  const [locale, setLocale] = useState(Localization.locale)
+  const l = Localization.locale.indexOf('ar')
+
+  const [locale, setLocale] = useState(l==-1?'en':'ar')
   const localizationContext = useMemo(
     () => ({
       t: (scope, options) => i18n.t(scope, { locale, ...options }),
@@ -58,7 +59,7 @@ const App = () => {
 
   const {persistor, store} = ConfigureStore()
 
-  const [selectedLang, setSelectedLang] = useState('en')
+  const [selectedLang, setSelectedLang] = useState(locale)
 
   useEffect(() =>{
     fetchLanguage = async() => {
@@ -87,7 +88,7 @@ const App = () => {
         hidden={false}
         networkActivityIndicatorVisible={true} />
         <NavigationContainer theme={CustomDefaultTheme}>
-          <BottomTabs />
+          <MainNavigator />
         </NavigationContainer>
       </PersistGate>
     </Provider>

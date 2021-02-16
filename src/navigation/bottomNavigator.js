@@ -1,9 +1,10 @@
 import React, {useContext, useRef, useEffect} from 'react'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import CardEditor from '../screens/cardEditor'
+import Home from '../screens/home'
 import {View, Text, TouchableOpacity, StyleSheet, Animated, Dimensions} from 'react-native'
 import {MaterialCommunityIcons, AntDesign, Feather, Entypo} from 'react-native-vector-icons'
-import {LocalizationContext} from '../../App'
+import {LocalizationContext} from '../context/langContext'
 import ProfileNavigator from './profileNavigator'
 import {useTheme} from '@react-navigation/native'
 
@@ -170,7 +171,7 @@ function MyTabBar({ state, descriptors, navigation, size }) {
 
 const Tab = createBottomTabNavigator()
 
-const BottomTabs = (props) =>{
+const BottomNavigator = (props) =>{
     return(
         <Tab.Navigator 
             tabBar={props => <MyTabBar {...props} />}
@@ -184,7 +185,7 @@ const BottomTabs = (props) =>{
                 showLabel:false,
             }}>
             <Tab.Screen name='profile' component={ProfileNavigator} />
-            <Tab.Screen name='home' component={CardEditor} />
+            <Tab.Screen name='home' component={Home} />
             <Tab.Screen name='edit' component={CardEditor} />
             <Tab.Screen name='packages' component={CardEditor} />
             <Tab.Screen name='shopping' component={CardEditor} />
@@ -211,4 +212,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default BottomTabs
+export default BottomNavigator

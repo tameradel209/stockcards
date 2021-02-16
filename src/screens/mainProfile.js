@@ -3,7 +3,7 @@ import {View, Text, Dimensions, TouchableOpacity, ScrollView, Image, StyleSheet}
 import {MaterialCommunityIcons} from 'react-native-vector-icons'
 import { LinearGradient } from 'expo-linear-gradient'
 import * as Device from 'expo-device'
-import {LocalizationContext} from '../../App'
+import {LocalizationContext} from '../context/langContext'
 import { useTheme, useFocusEffect } from '@react-navigation/native'
 import * as Animatable from 'react-native-animatable'
 

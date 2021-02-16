@@ -3,12 +3,11 @@ import { Animated, View, StyleSheet, PanResponder, Text, TouchableWithoutFeedbac
 import Slider from '@react-native-community/slider'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import db from '../../assets/test.json'
-import {useLanguages} from '../../App'
 import {useDispatch, useSelector} from 'react-redux'
 import ar from '../lang/ar.json'
 import * as ActionTypes from '../redux/actions/actionTypes'
 import { ColorPicker } from 'react-native-color-picker'
-import {LocalizationContext} from '../../App'
+import {LocalizationContext} from '../context/langContext'
 
 const CardEditor = (props) => {
 
