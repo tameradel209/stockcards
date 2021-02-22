@@ -1,10 +1,10 @@
-import React, {useContext, useCallback} from 'react'
+import React, {useContext, useCallback, useEffect} from 'react'
 import {View, Text, Dimensions, TouchableOpacity, ScrollView, Image, StyleSheet} from 'react-native'
 import {MaterialCommunityIcons} from 'react-native-vector-icons'
 import { LinearGradient } from 'expo-linear-gradient'
 import * as Device from 'expo-device'
 import {LocalizationContext} from '../context/langContext'
-import { useTheme, useFocusEffect } from '@react-navigation/native'
+import { useTheme, useFocusEffect, useIsFocused } from '@react-navigation/native'
 import * as Animatable from 'react-native-animatable'
 
 const {width, height} = Dimensions.get('window')
@@ -53,23 +53,24 @@ const MainProfile = (props) => {
 
     const {t, locale, setLocale} = useContext(LocalizationContext)
 
-/*     const handleViewRef = ref => this.view = ref
+    const handleViewRef = ref => this.view = ref
 
     const zoom = () => this.view.zoomInDown(2000)
 
-    useFocusEffect(useCallback(
-        () => {
-            zoom() 
-        },
-        [],
-    )) */
+    const focused = useIsFocused()
+
+    useEffect(() =>{
+        if(focused){
+            zoom()
+        }
+    }, [focused])
 
     return(
         <View style={styles.container}>
             <View style={styles.headerContainer}>
                 <Header name={'Ahmed Adel'} />
             </View>
-            <Animatable.View animation={'zoomInDown'} /* ref={handleViewRef} */ style={styles.bodyContainer}>
+            <Animatable.View ref={handleViewRef} style={styles.bodyContainer}>
                 <Item icon={<Image source={require('../../assets/chat-bubble-user.png')} style={{width:24, height:24}} />} name={t('personal information')} onPress={() => props.navigation.navigate('personalInfo')}/>
                 <Item icon={<Image source={require('../../assets/image-plus.png')} style={{width:24, height:24}} />} name={t('my favorite cards')} onPress={() => props.navigation.navigate('favoriteCards')}/>
                 <Item icon={<Image source={require('../../assets/package.png')} style={{width:24, height:24}} />} name={t('my packages')} onPress={() => props.navigation.navigate('myPackages')}/>

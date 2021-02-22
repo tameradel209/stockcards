@@ -66,6 +66,8 @@
     "password reset":"password reset",
     "you can reset your password if you are facing a problem while login":"you can reset your password if you are facing a problem while login",
     "enter your email to reset your password":"enter your email to reset your password",
-    "phrase2":"you will recieve a message that contains your activation code. if you are facing a problrms resetting your password. call us or send an email"
-
+    "phrase2":"you will recieve a message that contains your activation code. if you are facing a problrms resetting your password. call us or send an email",
+    "occasions":"occasions",
+    "occasion":"occasion",
+    "occasion filter":"occasion filter"
 }

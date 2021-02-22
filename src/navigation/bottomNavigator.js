@@ -7,6 +7,7 @@ import {MaterialCommunityIcons, AntDesign, Feather, Entypo} from 'react-native-v
 import {LocalizationContext} from '../context/langContext'
 import ProfileNavigator from './profileNavigator'
 import {useTheme} from '@react-navigation/native'
+import DrawerNavigator from "./drawerNavigator";
 
 
 const {width, height} = Dimensions.get('window')
@@ -185,7 +186,7 @@ const BottomNavigator = (props) =>{
                 showLabel:false,
             }}>
             <Tab.Screen name='profile' component={ProfileNavigator} />
-            <Tab.Screen name='home' component={Home} />
+            <Tab.Screen name='home' component={DrawerNavigator} />
             <Tab.Screen name='edit' component={CardEditor} />
             <Tab.Screen name='packages' component={CardEditor} />
             <Tab.Screen name='shopping' component={CardEditor} />

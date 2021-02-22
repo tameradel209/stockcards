@@ -1,5 +1,5 @@
 import React, {useContext, useState, useEffect} from 'react'
-import {View, Text, Dimensions, TouchableOpacity, ScrollView, Image, StyleSheet, TextInput, Modal} from 'react-native'
+import {View, Text, Dimensions, Platform, TouchableOpacity, ScrollView, Image, StyleSheet, TextInput, Modal, KeyboardAvoidingView} from 'react-native'
 import {MaterialCommunityIcons} from 'react-native-vector-icons'
 import {LocalizationContext} from '../context/langContext'
 import {useTheme} from '@react-navigation/native'
@@ -14,6 +14,7 @@ const Password = (props) =>{
     const {colors} = useTheme()
 
     return(
+        <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={{flex:1}}>
         <ScrollView>
             <View style={{height:height/2}}>
                 <Image source={require('../../assets/passwordbg.png')} resizeMode='stretch' style={{width:width, height:height/2}} />
@@ -48,6 +49,7 @@ const Password = (props) =>{
                 <CustomButton onPress={() => null} style={{backgroundColor:colors.backageIcon}} title={t('login')} titleStyle={{color:'#ffffff'}}/>
             </View>
         </ScrollView>
+        </KeyboardAvoidingView>
     )
 }
 

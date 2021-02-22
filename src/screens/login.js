@@ -1,5 +1,5 @@
 import React, {useContext, useState, useEffect} from 'react'
-import {View, Text, Dimensions, TouchableOpacity, ScrollView, Image, StyleSheet, TextInput, Modal} from 'react-native'
+import {View, Text, Dimensions, TouchableOpacity, ScrollView, Image, StyleSheet, TextInput, Modal, Platform, KeyboardAvoidingView } from 'react-native'
 import {MaterialCommunityIcons} from 'react-native-vector-icons'
 import {LocalizationContext} from '../context/langContext'
 import {useTheme} from '@react-navigation/native'
@@ -14,6 +14,7 @@ const Login = (props) =>{
     const {colors} = useTheme()
 
     return(
+        <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={{flex:1}}>
         <ScrollView>
             <View style={{height:height/2}}>
                 <Image source={require('../../assets/loginbg.png')} resizeMode='stretch' style={{width:width, height:height/2}} />
@@ -38,7 +39,7 @@ const Login = (props) =>{
                     <Text style={{color:colors.nameText}}>{t('password')}</Text>
                 </View>
                 <View style={{flexDirection:locale=='en'?'row':'row-reverse', justifyContent:'space-between', marginBottom:10, marginHorizontal:5, padding:5, alignItems:'center', borderBottomWidth:1, borderColor:colors.bottomBorder, width:width-20}}>
-                    <TextInput placeholder={t('enter password')}  textAlign={locale=='en'?'left':'right'} />
+                    <TextInput placeholder={t('enter password')} secureTextEntry  textAlign={locale=='en'?'left':'right'} style={{width:200}} />
                     <TouchableOpacity onPress={() => props.navigation.navigate('password')}>
                         <Text style={{color:'#85314b'}}>{t('forgot password ?')}</Text>
                     </TouchableOpacity>
@@ -72,6 +73,7 @@ const Login = (props) =>{
                 </View>
             </View>
         </ScrollView>
+        </KeyboardAvoidingView>
     )
 }
 

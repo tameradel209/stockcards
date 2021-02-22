@@ -1,4 +1,5 @@
 import React, {useContext} from 'react'
+import {Button} from 'react-native'
 import {createStackNavigator} from '@react-navigation/stack'
 import MainProfile from '../screens/mainProfile'
 import PersonalInfo from '../screens/personalInfo'
@@ -8,16 +9,16 @@ import MyPackages from '../screens/myPackages'
 import OrdersList from '../screens/ordersList'
 import Notifications from '../screens/notificationsManagement'
 import {LocalizationContext} from '../context/langContext'
-import {useTheme} from '@react-navigation/native'
+import {useTheme, useNavigation} from '@react-navigation/native'
 import {Ionicons} from 'react-native-vector-icons'
 import PackageManagement from "../screens/packageManagement";
 
 const Stack = createStackNavigator()
 
-const ProfileNavigator = () =>{
+const ProfileNavigator = (props) =>{
     const {colors} = useTheme()
     const {t, locale, setLocale} = useContext(LocalizationContext)
-
+    const navigation = useNavigation()
     return(
         <Stack.Navigator screenOptions={{
             headerTitleStyle:{color:colors.headerText},
@@ -30,7 +31,7 @@ const ProfileNavigator = () =>{
             }} />
             <Stack.Screen name='personalInfo' component={PersonalInfo} options={{
                 headerTitle:t('personal information'),
-                headerTitleAlign:'center'
+                headerTitleAlign:'center',
             }} />
             <Stack.Screen name='editPersonalInfo' component={EditPersonalInfo} options={{
                 headerTitle:t('edit personal information'),

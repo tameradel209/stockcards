@@ -1,7 +1,7 @@
 import React, {useContext, useRef, useState, useEffect, useCallback} from 'react'
 import {View, Text, Dimensions, TouchableOpacity, Animated, ScrollView, Image, StyleSheet, FlatList} from 'react-native'
 import {LocalizationContext} from '../context/langContext'
-import {useTheme, useFocusEffect} from '@react-navigation/native'
+import {useTheme, useFocusEffect, useIsFocused} from '@react-navigation/native'
 import {Feather, MaterialCommunityIcons} from 'react-native-vector-icons'
 import * as Animatable from 'react-native-animatable'
 
@@ -77,6 +77,7 @@ const Header = (props) =>{
     useFocusEffect(useCallback(
         () =>{
             position.x.setValue(0)
+            setFocus(0)
             //filter the packages to all
           }, [locale]
     ))
@@ -124,7 +125,7 @@ const MyPackages = (props) =>{
             <Header />
             <FlatList 
                 data={data}
-                renderItem={({item, index}) => <Package key={index} navigation={props.navigation} />}
+                renderItem={({item, index}) => <Package key={index} navigation={props.navigation}/>}
                 keyExtractor={(item) => item}
             />
         </View>

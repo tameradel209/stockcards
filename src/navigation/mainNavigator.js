@@ -3,11 +3,12 @@ import {createStackNavigator} from '@react-navigation/stack'
 import {LocalizationContext} from '../context/langContext'
 import {useTheme} from '@react-navigation/native'
 import {Ionicons} from 'react-native-vector-icons'
-import BottomNavigator from './bottomNavigator'
 import Login from '../screens/login'
 import Signup from '../screens/signup'
 import Splash from "../screens/splash";
 import Password from '../screens/password'
+import DrawerNavigator from './drawerNavigator';
+import BottomNavigator from './bottomNavigator'
 
 const Stack = createStackNavigator()
 

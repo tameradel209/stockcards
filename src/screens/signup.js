@@ -1,5 +1,5 @@
 import React, {useContext, useState, useEffect} from 'react'
-import {View, Text, Dimensions, TouchableOpacity, ScrollView, Image, StyleSheet, TextInput, Modal} from 'react-native'
+import {View, Text, Dimensions, TouchableOpacity, ScrollView, Image, StyleSheet, TextInput, Modal, Platform, KeyboardAvoidingView} from 'react-native'
 import {MaterialCommunityIcons} from 'react-native-vector-icons'
 import {LocalizationContext} from '../context/langContext'
 import {useTheme} from '@react-navigation/native'
@@ -14,6 +14,7 @@ const Signup = (props) =>{
     const {colors} = useTheme()
 
     return(
+        <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={{flex:1}}>
         <ScrollView>
             <View style={{height:height/2}}>
                 <Image source={require('../../assets/signupbg.png')} resizeMode='stretch' style={{width:width, height:height/2}} />
@@ -50,13 +51,13 @@ const Signup = (props) =>{
                     <Text style={{color:colors.nameText}}>{t('password')}</Text>
                 </View>
                 <View style={{marginBottom:10,marginHorizontal:5, padding:5, justifyContent:'center', borderBottomWidth:1, borderColor:colors.bottomBorder, width:width-20}}>
-                    <TextInput placeholder={t('enter password')}  textAlign={locale=='en'?'left':'right'} />
+                    <TextInput placeholder={t('enter password')} secureTextEntry textAlign={locale=='en'?'left':'right'} />
                 </View>
                 <View style={{marginHorizontal:10, justifyContent:'center'}}>
                     <Text style={{color:colors.nameText}}>{t('rewrite password')}</Text>
                 </View>
                 <View style={{marginBottom:10,marginHorizontal:5, padding:5, justifyContent:'center', borderBottomWidth:1, borderColor:colors.bottomBorder, width:width-20}}>
-                    <TextInput placeholder={t('rewrite password')}  textAlign={locale=='en'?'left':'right'} />
+                    <TextInput placeholder={t('rewrite password')} secureTextEntry textAlign={locale=='en'?'left':'right'} />
                 </View>
             </View>
             <View style={{alignItems:'center', margin:10}}>
@@ -77,6 +78,7 @@ const Signup = (props) =>{
                 </TouchableOpacity>
             </View>
         </ScrollView>
+        </KeyboardAvoidingView>
     )
 }
 
