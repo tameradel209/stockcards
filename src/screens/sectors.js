@@ -46,7 +46,7 @@ const Sectors = (props) =>{
                         return <View style={{width:spacer}}/>
                     }
                     return(
-                        <View>
+                        <TouchableOpacity onPress={() => props.navigation.navigate('sector')}>
                             <Animated.View style={{margin:10, flex:1, alignItems:'center', justifyContent:'center', borderRadius:20, transform:[{scaleY}]}}>
                                 <Image source={require('../../assets/card2.png')} resizeMode='stretch' style={{width:width*0.75, height:height*0.45, borderRadius:20, shadowColor:'#000', shadowOffset:{height:2, width:0}, shadowOpacity:0.1, shadowRadius: 1, elevation: 5}}/>
                             </Animated.View>
@@ -54,7 +54,7 @@ const Sectors = (props) =>{
                                 <Text style={{color:colors.headerText}}>congratulated cards</Text>
                                 <Text style={{color:colors.headerText, fontWeight:'bold', fontSize:16}}>eid el fetr el mobarak</Text>
                             </View>
-                        </View>
+                        </TouchableOpacity>
                     )
             }}
                 keyExtractor={(item) => item}

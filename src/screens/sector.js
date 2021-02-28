@@ -8,7 +8,7 @@ import Card from '../components/card'
 
 const {width, height} = Dimensions.get('screen')
 
-const Occasion = (props) =>{
+const Sector = (props) =>{
     const {t, locale, setLocale} = useContext(LocalizationContext)
     const {colors} = useTheme()
     const [button, setButton] = useState(0)
@@ -40,7 +40,7 @@ const Occasion = (props) =>{
                             <Text style={{color:button!=2?colors.componentText:'white'}}>special</Text>
                         </TouchableOpacity>
                     </View>
-                    <TouchableOpacity style={{flex:1}} onPress={() => props.navigation.navigate('occasionFilter')}>
+                    <TouchableOpacity style={{flex:1}} onPress={() => props.navigation.navigate('sectorFilter')}>
                             <Image source={require('../../assets/Filter.png')} style={{width:38, height:38}} />
                     </TouchableOpacity>
                 </View>
@@ -52,7 +52,7 @@ const Occasion = (props) =>{
                                             name='name of the card' 
                                             price='5.00 SR' 
                                             originalPrice='8.00 SR' 
-                                            uri={uri} onPress={() => props.navigation.navigate('occasionCardShow')}
+                                            uri={uri} onPress={() => props.navigation.navigate('sectorCardShow')}
                                             patch={
                                                 <View style={[{width:30, height:30, borderRadius:15, alignItems:'center', justifyContent:'center', backgroundColor:'white', position:'absolute', top:5}, locale=='en'? {left:5} : {right:5}]}>
                                                     <MaterialCommunityIcons name='cards-heart' size={20} color={colors.icon} />
@@ -73,4 +73,4 @@ const Occasion = (props) =>{
     )
 }
 
-export default Occasion
+export default Sector

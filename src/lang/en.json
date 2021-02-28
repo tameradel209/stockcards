@@ -69,5 +69,18 @@
     "phrase2":"you will recieve a message that contains your activation code. if you are facing a problrms resetting your password. call us or send an email",
     "occasions":"occasions",
     "occasion":"occasion",
-    "occasion filter":"occasion filter"
+    "occasion filter":"occasion filter",
+    "card":"card",
+    "sector":"sector",
+    "sectors":"sectors",
+    "offers packages":"offers packages",
+    "about app":"about app",
+    "contact us":"contact us",
+    "privacy policy":"privacy policy",
+    "terms of use":"terms of use",
+    "common questions":"common questions",
+    "how to design a card":"how to design a card",
+    "settings":"settings",
+    "payment method":"payment method",
+    "card size":"card size"
 }

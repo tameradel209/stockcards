@@ -27,6 +27,15 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "facebookAppId": "3248274038599754",
+    "facebookScheme": "fb3248274038599754",
+    "facebookDisplayName": "stockcards",
+    "extra":{
+      "googleAppId": {
+        "ios": "227041967867-91vcocpl037altkb829757nemahhohi3.apps.googleusercontent.com",
+        "android": "227041967867-5tkmdbmeuiv9nl78ik1jfa7c3h1t0k7m.apps.googleusercontent.com"
+      }
     }
   }
 }

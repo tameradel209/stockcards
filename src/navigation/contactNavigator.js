@@ -16,10 +16,13 @@ import Occasions from "../screens/occasions";
 import Occasion from "../screens/occasion";
 import OcasionFilter from "../screens/occasionFilter";
 import OccasionCardShow from '../screens/occasionCardShow'
+import OffersPackages from '../screens/offersPackages'
+import AboutApp from '../screens/aboutApp'
+import ContactUs from '../screens/contactUs'
 
 const Stack = createStackNavigator()
 
-const OccasionsNavigator = (props) =>{
+const ContactNavigator = (props) =>{
     const {colors} = useTheme()
     const {t, locale, setLocale} = useContext(LocalizationContext)
     const navigation = useNavigation()
@@ -30,24 +33,12 @@ const OccasionsNavigator = (props) =>{
             headerRight:() => <Ionicons name='list' onPress={() => props.navigation.toggleDrawer()} size={28} />,
             headerBackImage:({tintColor}) => <Ionicons name={'ios-arrow-back'} color={colors.headerText} size={30}/>
         }}>
-            <Stack.Screen name='occasons' component={Occasions} options={{
-                headerTitle:t('occasions'),
+            <Stack.Screen name='contactUs' component={ContactUs} options={{
+                headerTitle:t('contact us'),
                 headerTitleAlign:'center'
-            }} />
-            <Stack.Screen name='occasion' component={Occasion} options={{
-                headerTitle:t('occasion'),
-                headerTitleAlign:'center',
-            }} />
-            <Stack.Screen name='occasionFilter' component={OcasionFilter} options={{
-                headerTitle:t('occasion filter'),
-                headerTitleAlign:'center',
-            }} />
-            <Stack.Screen name='occasionCardShow' component={OccasionCardShow} options={{
-                headerTitle:t('card'),
-                headerTitleAlign:'center',
             }} />
         </Stack.Navigator>
     )
 }
 
-export default OccasionsNavigator
+export default ContactNavigator

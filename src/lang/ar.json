@@ -69,5 +69,18 @@
     "phrase2":"ستتلقى رسالة تحتوى على رمز التفعيل الخاص بكز اذا كنت تواجه مشكلات فى اعادة تعين كلمة المرور الخاصة بك, فاتصل بنا أو أرسل لنا بريد الكترونيا",
     "occasions":"المناسبات",
     "occasion":"المناسبه",
-    "occasion filter":"تصفية النتائج"
+    "occasion filter":"تصفية النتائج",
+    "card":"كارت",
+    "sector":"قطاع",
+    "sectors":"قطاعات",
+    "offers packages":"باقات العروض",
+    "about app":"عن التطبيق",
+    "contact us":"اتصل بنا",
+    "privacy policy":"سياسة الخصوصية",
+    "terms of use":"شروط الاستخدام",
+    "common questions":"الاسئله الشائعة",
+    "how to design a card":"كيف تصمم كارت",
+    "settings":"الضبط",
+    "payment method":"طريقة الدفع",
+    "card size":"مقاس الكارت"
 }

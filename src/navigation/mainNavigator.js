@@ -18,7 +18,7 @@ const MainNavigator = () =>{
     const [user, setUser] = useState(true)
 
     return(
-        <Stack.Navigator initialRouteName={'splash'} screenOptions={{
+        <Stack.Navigator initialRouteName={'bottomNavigator'} screenOptions={{
             headerShown:false
         }}>
             {user ? (

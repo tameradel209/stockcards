@@ -20,9 +20,18 @@ import { LinearGradient } from 'expo-linear-gradient'
 import {MaterialCommunityIcons} from 'react-native-vector-icons'
 import Constants from 'expo-constants'
 import OcasionsNavigator from './ocasionsNavigator'
-
+import SectorsNavigator from './sectorsNavigator'
+import OffersNavigator from './offersNavigator'
+import AboutNavigator from './aboutNavigator'
+import ContactNavigator from './contactNavigator'
+import PrivacyNavigator from './privacyNavigator'
+import TermsNavigator from './termsNavigator'
+import QuestionsNavigator from './questionsNavigator'
+import HowNavigator from './howNavigator'
+import SettingsNavigator from './settingsNavigator'
 
 const {width, height} = Dimensions.get('window')
+
 const Drawer = createDrawerNavigator()
 
 const Label = (props) =>{
@@ -89,9 +98,10 @@ const DrawerNavigator = () =>{
 
     return(
         <Drawer.Navigator 
+            initialRouteName='home'
             drawerContent={CustomDrawerContentComponent} 
             drawerPosition={locale=='en'?'left':'right'} 
-            backBehavior='order' 
+            backBehavior='order'
             screenOptions={{
             swipeEnabled:false,
 /*             header: ({ scene }) => {
@@ -124,47 +134,42 @@ const DrawerNavigator = () =>{
             />
             <Drawer.Screen 
                 name='sectors' 
-                component={Sectors}
+                component={SectorsNavigator}
                 options={{drawerLabel:() => <Label image={require('../../assets/education.png')} title='sectors'/>}}
             />
             <Drawer.Screen 
-                name='offersPackages' 
-                component={OffersPackages}
-                options={{drawerLabel:() => <Label image={require('../../assets/package.png')} title='packages offers'/>}}    
-            />
-            <Drawer.Screen 
                 name='aboutApp' 
-                component={AboutApp} 
+                component={AboutNavigator} 
                 options={{drawerLabel:() => <Label image={require('../../assets/comment.png')} title='about app'/>}} 
             />
             <Drawer.Screen 
                 name='contactUs'
-                component={ContactUs}
+                component={ContactNavigator}
                 options={{drawerLabel:() => <Label image={require('../../assets/message.png')} title='contact us'/>}} 
             />
             <Drawer.Screen 
                 name='privacyPolicy'
-                component={PrivacyPolicy}
-                options={{drawerLabel:() => <Label image={require('../../assets/clipboard-alt.png')} title='privacy policy'/>}} 
+                component={PrivacyNavigator}
+                options={{drawerLabel:() => <Label image={require('../../assets/clipboard-alt.png')} title='privacy policy'/>}}
             />
             <Drawer.Screen 
-                name='useTerms' 
-                component={UseTerms}
+                name='useTerms'
+                component={TermsNavigator}
                 options={{drawerLabel:() => <Label image={require('../../assets/file-check.png')} title='terms of use'/>}} 
             />
             <Drawer.Screen 
-                name='commonQuestions' 
-                component={commonQuestions}
+                name='commonQuestions'
+                component={QuestionsNavigator}
                 options={{drawerLabel:() => <Label image={require('../../assets/exclamation.png')} title='common questions'/>}} 
             />
             <Drawer.Screen 
                 name='howDesignCard' 
-                component={HowDesignCard} 
+                component={HowNavigator} 
                 options={{drawerLabel:() => <Label image={require('../../assets/videosquare.png')} title='how design your card'/>}}     
             />
             <Drawer.Screen 
                 name='Settings' 
-                component={Settings} 
+                component={SettingsNavigator} 
                 options={{drawerLabel:() => <Label image={require('../../assets/package.png')} title='settings'/>}} 
             />
         </Drawer.Navigator>

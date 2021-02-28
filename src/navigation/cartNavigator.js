@@ -16,38 +16,37 @@ import Occasions from "../screens/occasions";
 import Occasion from "../screens/occasion";
 import OcasionFilter from "../screens/occasionFilter";
 import OccasionCardShow from '../screens/occasionCardShow'
+import OffersPackages from '../screens/offersPackages'
+import AboutApp from '../screens/aboutApp'
+import Cart from '../screens/cart'
+import Payment from '../screens/payment'
+import Congrats from '../screens/congrats'
 
 const Stack = createStackNavigator()
 
-const OccasionsNavigator = (props) =>{
+const CartNavigator = (props) =>{
     const {colors} = useTheme()
     const {t, locale, setLocale} = useContext(LocalizationContext)
     const navigation = useNavigation()
     return(
-        <Stack.Navigator screenOptions={{
+        <Stack.Navigator initialRouteName={'cart'} screenOptions={{
             headerTitleStyle:{color:colors.headerText},
             headerBackTitleVisible:false,
-            headerRight:() => <Ionicons name='list' onPress={() => props.navigation.toggleDrawer()} size={28} />,
             headerBackImage:({tintColor}) => <Ionicons name={'ios-arrow-back'} color={colors.headerText} size={30}/>
         }}>
-            <Stack.Screen name='occasons' component={Occasions} options={{
-                headerTitle:t('occasions'),
+            <Stack.Screen name='cart' component={Cart} options={{
+                headerTitle:t('cart'),
                 headerTitleAlign:'center'
             }} />
-            <Stack.Screen name='occasion' component={Occasion} options={{
-                headerTitle:t('occasion'),
-                headerTitleAlign:'center',
+            <Stack.Screen name='payment' component={Payment} options={{
+                headerTitle:t('payment method'),
+                headerTitleAlign:'center'
             }} />
-            <Stack.Screen name='occasionFilter' component={OcasionFilter} options={{
-                headerTitle:t('occasion filter'),
-                headerTitleAlign:'center',
-            }} />
-            <Stack.Screen name='occasionCardShow' component={OccasionCardShow} options={{
-                headerTitle:t('card'),
-                headerTitleAlign:'center',
+            <Stack.Screen name='congrats' component={Congrats} options={{
+                headerShown:false
             }} />
         </Stack.Navigator>
     )
 }
 
-export default OccasionsNavigator
+export default CartNavigator

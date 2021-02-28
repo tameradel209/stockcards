@@ -24,7 +24,7 @@ const Card1 = (props) =>{
     const {colors} = useTheme()
 
     return(
-        <TouchableOpacity onPress={() => props.setLang(props.index)} style={{padding:10, backgroundColor:'white', flexDirection:'row'}}>
+        <TouchableOpacity onPress={() => null} style={{padding:10, backgroundColor:'white', flexDirection:'row'}}>
             <View style={{margin:10}}>
                 <Image source={props.uri} resizeMode='contain' style={{width:20, height:20}} />
             </View>

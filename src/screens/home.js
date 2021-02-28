@@ -7,6 +7,7 @@ import * as Animatable from 'react-native-animatable'
 import { TextInput } from 'react-native-gesture-handler'
 import CustomButton from '../components/button'
 import Constants from 'expo-constants'
+import Card from '../components/card'
 
 const {width, height} = Dimensions.get('window')
 
@@ -166,7 +167,20 @@ const Home = (props) =>{
                         <View>
                             <FlatList 
                                 data={data}
-                                renderItem={({item, index}) => <Card4 key={item} />}
+                                renderItem={({item, index}) => 
+                                                <Card 
+                                                    key={index} 
+                                                    name='name of the card' 
+                                                    price='5.00 SR' 
+                                                    originalPrice='8.00 SR' 
+                                                    uri={uri}
+                                                    patch={
+                                                        <View style={[{backgroundColor:'#ffa51d', borderRadius:3, padding:5, position:'absolute', top:5}, locale=='en'? {left:5} : {right:5}]}>
+                                                            <Text style={{color:'white'}}>special</Text>
+                                                        </View>
+                                                        }
+                                                />
+                                }
                                 keyExtractor={(item) => item}
                                 horizontal
                                 showsHorizontalScrollIndicator={false}
@@ -181,7 +195,19 @@ const Home = (props) =>{
                         <View>
                             <FlatList 
                                 data={data}
-                                renderItem={({item, index}) => <Card5 key={item} />}
+                                renderItem={({item, index}) => 
+                                                <Card 
+                                                    key={index} 
+                                                    name='name of the card' 
+                                                    price='free' 
+                                                    uri={uri}
+                                                    patch={
+                                                        <View style={[{borderRadius:3, backgroundColor:colors.backageIcon, position:'absolute', top:5, padding:5}, locale=='en'? {left:5} : {right:5}]}>
+                                                            <Text style={{color:'white'}}>free</Text>
+                                                        </View>
+                                                        }
+                                                />
+                                            }
                                 keyExtractor={(item) => item}
                                 horizontal
                                 showsHorizontalScrollIndicator={false}
@@ -193,13 +219,26 @@ const Home = (props) =>{
                     </View>
                     <View style={{backgroundColor:'#fff', marginVertical:20}}>
                         <View style={{alignItems:'center', flexDirection:'row', justifyContent:'space-between', padding:10}}>
-                            <Text style={{color:'#71233b', fontSize:18, fontWeight:'bold'}}>free gift cards</Text>
+                            <Text style={{color:'#71233b', fontSize:18, fontWeight:'bold'}}>ramadan occasion</Text>
                             <Text style={{color:'#3b3b3b'}}>more</Text>
                         </View>
                         <View>
                             <FlatList 
                                 data={data}
-                                renderItem={({item, index}) => <Card5 key={item} />}
+                                renderItem={({item, index}) => 
+                                                <Card 
+                                                    key={index} 
+                                                    name='name of the card' 
+                                                    price='5.00 SR' 
+                                                    originalPrice='8.00 SR' 
+                                                    uri={uri}
+                                                    patch={
+                                                        <View style={[{backgroundColor:'#ffa51d', borderRadius:3, padding:5, position:'absolute', top:5}, locale=='en'? {left:5} : {right:5}]}>
+                                                            <Text style={{color:'white'}}>special</Text>
+                                                        </View>
+                                                        }
+                                                />
+                                            }
                                 keyExtractor={(item) => item}
                                 horizontal
                                 showsHorizontalScrollIndicator={false}
@@ -208,13 +247,26 @@ const Home = (props) =>{
                     </View>
                     <View style={{backgroundColor:'#fff', marginVertical:20}}>
                         <View style={{alignItems:'center', flexDirection:'row', justifyContent:'space-between', padding:10}}>
-                            <Text style={{color:'#71233b', fontSize:18, fontWeight:'bold'}}>free gift cards</Text>
+                            <Text style={{color:'#71233b', fontSize:18, fontWeight:'bold'}}>cards for just born</Text>
                             <Text style={{color:'#3b3b3b'}}>more</Text>
                         </View>
                         <View>
                             <FlatList 
                                 data={data}
-                                renderItem={({item, index}) => <Card5 key={item} />}
+                                renderItem={({item, index}) => 
+                                                <Card 
+                                                    key={index} 
+                                                    name='name of the card' 
+                                                    price='5.00 SR' 
+                                                    originalPrice='8.00 SR' 
+                                                    uri={uri}
+                                                    patch={
+                                                        <View style={[{backgroundColor:'#ffa51d', borderRadius:3, padding:5, position:'absolute', top:5}, locale=='en'? {left:5} : {right:5}]}>
+                                                            <Text style={{color:'white'}}>special</Text>
+                                                        </View>
+                                                        }
+                                                />
+                                            }
                                 keyExtractor={(item) => item}
                                 horizontal
                                 showsHorizontalScrollIndicator={false}

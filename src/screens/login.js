@@ -1,10 +1,15 @@
 import React, {useContext, useState, useEffect} from 'react'
-import {View, Text, Dimensions, TouchableOpacity, ScrollView, Image, StyleSheet, TextInput, Modal, Platform, KeyboardAvoidingView } from 'react-native'
+import {View, Text, Dimensions, TouchableOpacity, ScrollView, Image, Alert, StyleSheet, TextInput, Modal, Platform, KeyboardAvoidingView, NativeModules } from 'react-native'
 import {MaterialCommunityIcons} from 'react-native-vector-icons'
 import {LocalizationContext} from '../context/langContext'
 import {useTheme} from '@react-navigation/native'
 import * as ImagePicker from 'expo-image-picker'
 import CustomButton from "../components/button";
+import * as Facebook from 'expo-facebook'
+import * as Google from 'expo-google-app-auth'
+import Constants from 'expo-constants'
+
+const {RNTwitterSignIn} = NativeModules
 
 const {width, height} = Dimensions.get('window')
 
@@ -12,6 +17,43 @@ const Login = (props) =>{
 
     const {t, locale} = useContext(LocalizationContext)
     const {colors} = useTheme()
+
+
+    const facebook = async () => {
+        const permissions = ['public_profile', 'email']
+        try{
+            Facebook.initializeAsync({appId:Constants.manifest.facebookAppId})
+            const res = await Facebook.logInWithReadPermissionsAsync({permissions})
+            console.log(res)
+        }
+        catch(err){Alert.alert(err.message)}
+    }
+
+    const google = async () => {
+        const permissions = ['profile', 'email']
+        try{
+            const result = await Google.logInAsync({
+                androidClientId: Constants.manifest.extra.googleAppId.android,
+                iosClientId: Constants.manifest.extra.googleAppId.ios,
+                permissions
+            })
+            if(result.type){
+                console.log(result.accessToken)
+            }
+            else{Alert.alert('login error')}
+        }
+        catch(err){Alert.alert(err.message)}
+    }
+
+    const signin = () =>{
+        RNTwitterSignIn.init(
+            'BbhrOnSAPH0ll7QqKxhMVFVuj',
+            'CxlddsDA0tMA5iNN1HbE7Ruf4TKnV98hgAUZRWTuI5iHARfWjj'
+            )
+        RNTwitterSignIn.login()
+        .then(d => console.log(d))
+        .catch(e => console.log(e))
+    }
 
     return(
         <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={{flex:1}}>
@@ -55,10 +97,10 @@ const Login = (props) =>{
                 <TouchableOpacity onPress={() => null} style={{width:50, height:50, borderRadius:25, alignItems:'center', justifyContent:'center', shadowColor: '#000', shadowOffset: {width: 0,height: 3,},shadowOpacity: 0.25,shadowRadius: 3.84, elevation:5, backgroundColor:'white'}}>
                     <Image source={require('../../assets/twitter.png')} style={{width:20, height:20}} />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => null} style={{width:50, height:50, borderRadius:25, alignItems:'center', justifyContent:'center', shadowColor: '#000', shadowOffset: {width: 0,height: 3,},shadowOpacity: 0.25,shadowRadius: 3.84, elevation:5, backgroundColor:'white'}}>
+                <TouchableOpacity onPress={facebook} style={{width:50, height:50, borderRadius:25, alignItems:'center', justifyContent:'center', shadowColor: '#000', shadowOffset: {width: 0,height: 3,},shadowOpacity: 0.25,shadowRadius: 3.84, elevation:5, backgroundColor:'white'}}>
                     <Image source={require('../../assets/facebook.png')} resizeMode='contain' style={{width:20, height:20}} />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => null} style={{width:50, height:50, borderRadius:25, alignItems:'center', justifyContent:'center', shadowColor: '#000', shadowOffset: {width: 0,height: 3,},shadowOpacity: 0.25,shadowRadius: 3.84, elevation:5, backgroundColor:'white'}}>
+                <TouchableOpacity onPress={google} style={{width:50, height:50, borderRadius:25, alignItems:'center', justifyContent:'center', shadowColor: '#000', shadowOffset: {width: 0,height: 3,},shadowOpacity: 0.25,shadowRadius: 3.84, elevation:5, backgroundColor:'white'}}>
                     <Image source={require('../../assets/google.png')} style={{width:20, height:20}} />
                 </TouchableOpacity>
             </View>

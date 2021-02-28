@@ -8,7 +8,10 @@ import {LocalizationContext} from '../context/langContext'
 import ProfileNavigator from './profileNavigator'
 import {useTheme} from '@react-navigation/native'
 import DrawerNavigator from "./drawerNavigator";
-
+import Cart from '../screens/cart'
+import CartNavigator from './cartNavigator'
+import OffersNavigator from './offersNavigator'
+import DesignNavigator from './designNavigator'
 
 const {width, height} = Dimensions.get('window')
 const margin = width/100
@@ -32,7 +35,7 @@ function MyTabBar({ state, descriptors, navigation, size }) {
     else{
       position.x.setValue(-(width-margin*2)/6+margin)
     }
-    navigation.navigate('home')
+    navigation.navigate('edit')
   }, [locale])
 
   const move = (x,y) => {
@@ -137,7 +140,7 @@ function MyTabBar({ state, descriptors, navigation, size }) {
           });
 
           if (!isFocused && !event.defaultPrevented) {
-            navigation.navigate(route.name);
+              navigation.navigate(route.name);
           }
         };
 
@@ -176,20 +179,21 @@ const BottomNavigator = (props) =>{
     return(
         <Tab.Navigator 
             tabBar={props => <MyTabBar {...props} />}
-            initialRouteName={'home'}
+            initialRouteName={'edit'}
             tabBarOptions={{
-                style:{
-                    backgroundColor:'#ffd8eb', 
-                    borderRadius:100, 
-                    margin:10,
-                }, 
-                showLabel:false,
+              keyboardHidesTabBar: true,
+              style:{
+                  backgroundColor:'#ffd8eb', 
+                  borderRadius:100, 
+                  margin:10,
+              }, 
+              showLabel:false,
             }}>
             <Tab.Screen name='profile' component={ProfileNavigator} />
             <Tab.Screen name='home' component={DrawerNavigator} />
-            <Tab.Screen name='edit' component={CardEditor} />
-            <Tab.Screen name='packages' component={CardEditor} />
-            <Tab.Screen name='shopping' component={CardEditor} />
+            <Tab.Screen name='edit' component={DesignNavigator} />
+            <Tab.Screen name='packages' component={OffersNavigator} />
+            <Tab.Screen name='shopping' component={CartNavigator} />
         </Tab.Navigator>
     )
 }
